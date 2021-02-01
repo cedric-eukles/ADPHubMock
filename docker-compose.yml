@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  ADPHubMock:
+    image: nginx
+    volumes:
+      - ./nginx-ADPHubMock.conf:/etc/nginx/nginx.conf
+    ports:
+      - 8111:80
+    depends_on:
+      - nginx-ReverseProxyEDMFix
+
+  nginx-ReverseProxyEDMFix:
+    image: nginx
+    volumes:
+        - ./nginx-ReverseProxyEDMFix.conf:/etc/nginx/nginx.conf
+    ports:
+      - 8222:80
