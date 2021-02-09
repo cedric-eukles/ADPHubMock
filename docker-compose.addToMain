@@ -1,0 +1,12 @@
+...
+
+  nginx-ReverseProxyEDMFix:
+    image: nginx
+    volumes:
+        - ./nginx-ReverseProxyEDMFix.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+    env_file:
+      - .env
+
+...
